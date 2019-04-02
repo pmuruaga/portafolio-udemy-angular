@@ -10,9 +10,15 @@ export class InfoPaginaService {
   info: InfoPagina = {};
   cargada = false;
 
+  equipo: any[] = [];
+
   constructor( private http: HttpClient ) {
     console.log('Servicio de InfoPagina Listo');
+    this.cargarInfo();
+    this.cargarEquipo();
+  }
 
+  private cargarInfo(){
     //Leer Archivo JSON
     this.http.get('assets/data/data-pagina.json')
       .subscribe( (resp: InfoPagina) => {
@@ -21,6 +27,17 @@ export class InfoPaginaService {
         this.info = resp;
 
         console.log(this.info["twitter"]);
+      });
+  }
+
+  private cargarEquipo(){
+    //Leer Archivo JSON
+    this.http.get('https://angular-html-udemy-course.firebaseio.com/Equipo.json')
+      .subscribe( (resp: any[]) => {
+        //console.log(resp);
+        this.equipo = resp;
+
+        console.log(resp);
       });
   }
 }
