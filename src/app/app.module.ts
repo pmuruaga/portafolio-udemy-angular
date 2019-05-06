@@ -12,6 +12,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ItemComponent } from './pages/item/item.component';
 import { PruebaComponenteComponent } from './prueba-componente.component';
 import { Comp1Component } from './my-comps/comp1/comp1.component';
+import { SearchComponent } from './pages/search/search.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { Comp1Component } from './my-comps/comp1/comp1.component';
     AboutComponent,
     ItemComponent,
     PruebaComponenteComponent,
-    Comp1Component
+    Comp1Component,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
